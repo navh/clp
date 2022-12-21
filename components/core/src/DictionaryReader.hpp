@@ -14,6 +14,7 @@
 #include "FileReader.hpp"
 #include "streaming_compression/passthrough/Decompressor.hpp"
 #include "streaming_compression/zstd/Decompressor.hpp"
+#include "string_utils.hpp"
 #include "Utils.hpp"
 
 /**
@@ -234,7 +235,7 @@ void DictionaryReader<DictionaryIdType, EntryType>::get_entries_matching_wildcar
                                                                                           std::unordered_set<const EntryType*>& entries) const
 {
     for (const auto& entry : m_entries) {
-        if (wildCardMatch(entry.get_value(), wildcard_string, false == ignore_case)) {
+        if (wildcard_match_unsafe(entry.get_value(), wildcard_string, false == ignore_case)) {
             entries.insert(&entry);
         }
     }

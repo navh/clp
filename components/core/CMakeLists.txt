@@ -275,12 +275,15 @@ set(SOURCE_FILES_clp
         src/streaming_compression/zstd/Constants.hpp
         src/streaming_compression/zstd/Decompressor.cpp
         src/streaming_compression/zstd/Decompressor.hpp
+        src/string_utils.cpp
+        src/string_utils.hpp
         src/StringReader.cpp
         src/StringReader.hpp
         src/TimestampPattern.cpp
         src/TimestampPattern.hpp
         src/TraceableException.cpp
         src/TraceableException.hpp
+        src/type_utils.hpp
         src/Utils.cpp
         src/Utils.hpp
         src/VariableDictionaryEntry.cpp
@@ -419,12 +422,15 @@ set(SOURCE_FILES_clg
         src/streaming_compression/zstd/Constants.hpp
         src/streaming_compression/zstd/Decompressor.cpp
         src/streaming_compression/zstd/Decompressor.hpp
+        src/string_utils.cpp
+        src/string_utils.hpp
         src/StringReader.cpp
         src/StringReader.hpp
         src/TimestampPattern.cpp
         src/TimestampPattern.hpp
         src/TraceableException.cpp
         src/TraceableException.hpp
+        src/type_utils.hpp
         src/Utils.cpp
         src/Utils.hpp
         src/VariableDictionaryEntry.cpp
@@ -554,6 +560,8 @@ set(SOURCE_FILES_clo
         src/streaming_compression/zstd/Constants.hpp
         src/streaming_compression/zstd/Decompressor.cpp
         src/streaming_compression/zstd/Decompressor.hpp
+        src/string_utils.cpp
+        src/string_utils.hpp
         src/StringReader.cpp
         src/StringReader.hpp
         src/Thread.cpp
@@ -562,6 +570,7 @@ set(SOURCE_FILES_clo
         src/TimestampPattern.hpp
         src/TraceableException.cpp
         src/TraceableException.hpp
+        src/type_utils.hpp
         src/Utils.cpp
         src/Utils.hpp
         src/VariableDictionaryEntry.cpp
@@ -648,6 +657,9 @@ set(SOURCE_FILES_unitTest
         src/EncodedVariableInterpreter.cpp
         src/EncodedVariableInterpreter.hpp
         src/ErrorCode.hpp
+        src/ffi/encoding_methods.cpp
+        src/ffi/encoding_methods.hpp
+        src/ffi/encoding_methods.tpp
         src/FileReader.cpp
         src/FileReader.hpp
         src/FileWriter.cpp
@@ -729,12 +741,15 @@ set(SOURCE_FILES_unitTest
         src/streaming_compression/zstd/Constants.hpp
         src/streaming_compression/zstd/Decompressor.cpp
         src/streaming_compression/zstd/Decompressor.hpp
+        src/string_utils.cpp
+        src/string_utils.hpp
         src/StringReader.cpp
         src/StringReader.hpp
         src/TimestampPattern.cpp
         src/TimestampPattern.hpp
         src/TraceableException.cpp
         src/TraceableException.hpp
+        src/type_utils.hpp
         src/Utils.cpp
         src/Utils.hpp
         src/VariableDictionaryEntry.cpp
@@ -753,16 +768,17 @@ set(SOURCE_FILES_unitTest
         submodules/sqlite3/sqlite3.h
         submodules/sqlite3/sqlite3ext.h
         tests/test-EncodedVariableInterpreter.cpp
+        tests/test-encoding_methods.cpp
         tests/test-Grep.cpp
         tests/test-main.cpp
         tests/test-ParserWithUserSchema.cpp
         tests/test-Segment.cpp
         tests/test-Stopwatch.cpp
         tests/test-StreamingCompression.cpp
+        tests/test-string_utils.cpp
         tests/test-TimestampPattern.cpp
         tests/test-Utils.cpp
         )
-
 add_executable(unitTest ${SOURCE_FILES_unitTest})
 target_link_libraries(unitTest
         PRIVATE
